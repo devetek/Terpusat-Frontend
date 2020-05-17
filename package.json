@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "deploy": "vercel",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "commit": "git-cz"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,12 +39,19 @@
     ]
   },
   "devDependencies": {
-    "cz-conventional-changelog": "3.2.0",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
     "vercel": "^19.0.1"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   }
 }
