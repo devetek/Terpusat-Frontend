@@ -38,6 +38,12 @@
     ]
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.2.0",
     "vercel": "^19.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
