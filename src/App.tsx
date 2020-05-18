@@ -3,7 +3,8 @@ import { Layout } from "antd";
 import { HelmetProvider } from "react-helmet-async";
 import { Router } from "react-router-dom";
 import Routes from "./routes";
-import "./App.css";
+
+import "./App.less";
 
 export interface AppProps {
   history: any;

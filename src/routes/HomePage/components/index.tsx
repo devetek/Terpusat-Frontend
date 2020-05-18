@@ -4,12 +4,15 @@ import { Layout } from "antd";
 
 const HomePage = () => {
   return (
-    <Layout.Content>
-      <Helmet>
-        <title>Home Page</title>
-      </Helmet>
-      Home Page
-    </Layout.Content>
+    <Layout>
+      <Layout.Sider theme="light">Sider</Layout.Sider>
+      <Layout.Content>
+        <Helmet>
+          <title>Home Page</title>
+        </Helmet>
+        Home Page
+      </Layout.Content>
+    </Layout>
   );
 };
 

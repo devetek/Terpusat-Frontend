@@ -15,6 +15,7 @@
     "@types/node": "^12.0.0",
     "@types/react-dom": "^16.9.0",
     "antd": "^4.2.4",
+    "dayjs": "^1.8.27",
     "history": "^4.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -24,10 +25,10 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "deploy": "vercel",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "commit": "git-cz"
   },
@@ -47,10 +48,12 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^5.6.4",
     "@types/loadable__component": "^5.10.0",
     "@types/react": "^16.9.35",
     "@types/react-router-dom": "^5.1.5",
     "commitizen": "^4.1.2",
+    "craco-less": "^1.16.0",
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",
     "vercel": "^19.0.1"
