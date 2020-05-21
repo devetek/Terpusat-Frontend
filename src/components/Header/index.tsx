@@ -1,29 +1,75 @@
 import React from "react";
-import { Layout, Menu } from "antd";
-
-import "./styles.less";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import useStyles from "./styles";
 
 export interface HeaderComponentProps {
   title: string;
+  sections?: ISectionItem[];
 }
 
-const HeaderComponent = ({ title }: HeaderComponentProps) => {
+export interface ISectionItem {
+  title?: string;
+  url?: string;
+}
+
+const HeaderComponent: React.FunctionComponent<HeaderComponentProps> = ({
+  sections,
+  title,
+}) => {
+  const classes = useStyles();
+
   return (
-    <Layout.Header
-      style={{ background: "none", padding: "0 2px", width: "100%" }}
-    >
-      <div className="logo" />
-      <Menu
-        theme="light"
-        mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        style={{ lineHeight: "64px" }}
-      >
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">Tentang</Menu.Item>
-        <Menu.Item key="3">Kontak</Menu.Item>
-      </Menu>
-    </Layout.Header>
+    <React.Fragment>
+      <AppBar color="primary" position="relative">
+        <Toolbar className={classes.toolbar}>
+          {/* <Button size="small" color="secondary" variant="outlined">
+            Subscribe
+          </Button> */}
+          <Typography
+            component="h2"
+            variant="h5"
+            color="inherit"
+            align="left"
+            noWrap
+            className={classes.toolbarTitle}
+          >
+            {title}
+          </Typography>
+          <IconButton>
+            <SearchIcon color="secondary" />
+          </IconButton>
+          <Button color="secondary" variant="outlined" size="small">
+            Sign up
+          </Button>
+        </Toolbar>
+        <Toolbar
+          component="nav"
+          variant="dense"
+          className={classes.toolbarSecondary}
+        >
+          {sections &&
+            sections.length &&
+            sections.map((section) => (
+              <Link
+                color="inherit"
+                noWrap
+                key={section.title}
+                variant="body2"
+                href={section.url}
+                className={classes.toolbarLink}
+              >
+                {section.title}
+              </Link>
+            ))}
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
   );
 };
 

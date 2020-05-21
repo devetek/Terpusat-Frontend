@@ -1,10 +1,7 @@
 import React from "react";
-import { Layout } from "antd";
 import { HelmetProvider } from "react-helmet-async";
 import { Router } from "react-router-dom";
 import Routes from "./routes";
-
-import "./App.less";
 
 export interface AppProps {
   history: any;
@@ -12,13 +9,11 @@ export interface AppProps {
 
 const App = ({ history }: AppProps): any => {
   return (
-    <Layout>
-      <HelmetProvider>
-        <Router history={history}>
-          <Routes />
-        </Router>
-      </HelmetProvider>
-    </Layout>
+    <HelmetProvider>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </HelmetProvider>
   );
 };
 

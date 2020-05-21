@@ -1,16 +1,32 @@
 import React from "react";
-import { Layout } from "antd";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import useStyles from "./styles";
 
 export interface FooterComponentProps {
-  copyright: string;
+  copyright?: string;
+  url?: string;
 }
 
-const FooterComponent = ({ copyright }: FooterComponentProps) => {
+const FooterComponent: React.FunctionComponent<FooterComponentProps> = ({
+  copyright,
+  url,
+}) => {
+  const classes = useStyles();
   return (
-    <Layout.Footer
-      style={{ textAlign: "center" }}
-      dangerouslySetInnerHTML={{ __html: copyright }}
-    />
+    <footer className={classes.footer}>
+      <Container maxWidth={false}>
+        <Typography variant="body2" color="textSecondary" align="right">
+          {"©"}
+          {new Date().getFullYear()}.
+          <Link color="inherit" href={url}>
+            {" "}
+            {copyright}
+          </Link>{" "}
+        </Typography>
+      </Container>
+    </footer>
   );
 };
 
