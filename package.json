@@ -1,7 +1,7 @@
 {
   "name": "terpusat-frontend",
   "engines": {
-    "node": ">=10.17.0 <12.2.0",
+    "node": ">=10.17.0",
     "yarn": ">=1.22.4"
   },
   "version": "0.1.0",
@@ -54,10 +54,12 @@
     "@types/loadable__component": "^5.10.0",
     "@types/react": "^16.9.35",
     "@types/react-router-dom": "^5.1.5",
+    "all-contributors-cli": "^6.14.2",
     "commitizen": "^4.1.2",
     "craco-less": "^1.16.0",
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",
+    "semantic-release": "^17.0.7",
     "vercel": "^19.0.1"
   },
   "config": {
