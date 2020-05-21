@@ -7,8 +7,6 @@ import FeaturedPost from "./FeaturedPost";
 import useStyles from "./styles";
 import mockup from "./../mockup/feature-post.json";
 
-console.log(mockup);
-
 export interface HomePageProps {
   featuredPosts?: IFeatureItem[];
 }
