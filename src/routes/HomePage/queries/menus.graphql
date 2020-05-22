@@ -1,0 +1,18 @@
+query MenuListQuery {
+  menus(first: 0) {
+    nodes {
+      count
+      id
+      isRestricted
+      menuId
+      menuItems {
+        nodes {
+          id
+          url
+          label
+          description
+        }
+      }
+    }
+  }
+}
