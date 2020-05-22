@@ -24,7 +24,7 @@ export interface SidebarNavComponentProps {
 export interface IPageItem {
   title?: string;
   href?: string;
-  icon?: string;
+  icon?: JSX.Element;
 }
 
 const SidebarNavComponent: React.FunctionComponent<SidebarNavComponentProps> = ({
