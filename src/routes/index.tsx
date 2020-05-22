@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
+import React from "react";
+import { Switch, Redirect, Route } from "react-router-dom";
 import HomeComponent from "routes/HomePage";
-import Layout from "components/Layout";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import { Main as MainLayout } from "Layout";
+import RouteWithLayout from "components/RouteWithLayout";
+// import Header from "components/Header";
+// import Footer from "components/Footer";
 
 const sections = [
   { title: "Store", url: "https://www.tokopedia.com/terpusat" },
@@ -23,16 +24,15 @@ const sections = [
 
 const Routes: React.FC = () => {
   return (
-    <Fragment>
-      <Layout>
-        <Header title="Terpusat Inc." sections={sections}></Header>
-        <Switch>
-          <Route exact path="/" component={HomeComponent} />
-          <Route exact path="/tentang" component={HomeComponent} />
-        </Switch>
-      </Layout>
-      <Footer copyright="Terpusat Inc" url="https://terpusat.com"></Footer>
-    </Fragment>
+    <Switch>
+      <Redirect exact from="/(dashboard|home)" to="/" />
+      <RouteWithLayout
+        exact
+        path="/"
+        layout={MainLayout}
+        component={HomeComponent}
+      />
+    </Switch>
   );
 };
 

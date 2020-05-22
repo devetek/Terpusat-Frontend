@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import useStyles from "./styles";
 
 export interface LayoutComponentProps {
   children: React.ReactNode;
