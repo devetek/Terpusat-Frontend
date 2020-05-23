@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 import { Divider, Drawer, ModalProps } from "@material-ui/core";
 import useStyles from "./styles";
-import pages from "./mockup-menu";
 
 import { Profile, SidebarNav } from "./components";
 
@@ -30,7 +29,7 @@ const SidebarComponent: React.FunctionComponent<SidebarComponentProps> = (
       <div {...rest} className={clsx(classes.root, className)}>
         <Profile />
         <Divider className={classes.divider} />
-        <SidebarNav className={classes.nav} pages={pages} />
+        <SidebarNav className={classes.nav} />
       </div>
     </Drawer>
   );

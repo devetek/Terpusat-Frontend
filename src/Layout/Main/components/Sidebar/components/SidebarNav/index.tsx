@@ -1,9 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
 import ListItem from "@material-ui/core/ListItem";
+import { onClickLink } from "utils/hyperlink";
+import useMenu from "./../../hooks/useMenu";
 import useStyles from "./styles";
 
 /**
@@ -17,43 +18,34 @@ import useStyles from "./styles";
  *
  */
 export interface SidebarNavComponentProps {
+  loading?: boolean;
   className?: string;
-  pages: IPageItem[];
-}
-
-export interface IPageItem {
-  title?: string;
-  href?: string;
-  icon?: JSX.Element;
 }
 
 const SidebarNavComponent: React.FunctionComponent<SidebarNavComponentProps> = ({
-  pages,
   className,
   ...rest
 }) => {
   const classes = useStyles();
-  const history = useHistory();
-
-  const onClickButton = (url: string | undefined): void => {
-    if (url) {
-      history.push(url);
-    }
-  };
+  const [loading, menus] = useMenu();
 
   return (
     <List {...rest} className={clsx(classes.root, className)}>
-      {pages.map((page) => (
-        <ListItem className={classes.item} disableGutters key={page.title}>
-          <Button
-            className={classes.button}
-            onClick={(e) => onClickButton(page.href)}
-          >
-            <div className={classes.icon}>{page.icon}</div>
-            {page.title}
-          </Button>
-        </ListItem>
-      ))}
+      {!loading &&
+        menus.map((page) => (
+          <ListItem className={classes.item} disableGutters key={page.label}>
+            <Button
+              className={classes.button}
+              onClick={(e) => {
+                e.preventDefault();
+                onClickLink(page.url);
+              }}
+            >
+              <div className={classes.icon}>{page.label}</div>
+              {page.title}
+            </Button>
+          </ListItem>
+        ))}
     </List>
   );
 };

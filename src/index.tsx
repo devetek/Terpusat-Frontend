@@ -1,10 +1,8 @@
-import { createBrowserHistory } from "history";
 import { render } from "react-dom";
 import App from "./App";
+import history from "utils/history";
 import * as serviceWorker from "./serviceWorker";
 import { createApolloClient, createApolloBrowser } from "utils/graphql";
-
-const history = createBrowserHistory();
 
 const client = createApolloClient({
   options: {

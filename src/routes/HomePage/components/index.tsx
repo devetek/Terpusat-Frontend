@@ -1,15 +1,11 @@
 import React from "react";
-import { loader } from "graphql.macro";
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "@apollo/react-hooks";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import FeaturedPost from "./FeaturedPost";
 import useStyles from "./styles";
 import mockup from "./../mockup/feature-post.json";
-
-const MenuListQuery = loader("../queries/menus.graphql");
 
 export interface HomePageProps {
   featuredPosts?: IFeatureItem[];
@@ -28,9 +24,6 @@ const HomePage: React.FunctionComponent<HomePageProps> = ({
   featuredPosts,
 }) => {
   const classes = useStyles();
-  const { loading, data: dataMenu } = useQuery(MenuListQuery, {
-    fetchPolicy: "network-only",
-  });
 
   return (
     <div>
@@ -39,7 +32,6 @@ const HomePage: React.FunctionComponent<HomePageProps> = ({
       </Helmet>
       <main>
         <Grid container spacing={4}>
-          {!loading && JSON.stringify(dataMenu)}
           {/* {featuredPosts &&
             featuredPosts.length &&
             featuredPosts.map((post) => (

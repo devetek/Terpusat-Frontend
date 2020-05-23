@@ -1,0 +1,21 @@
+query SidebarMenu {
+  menus(first: 0, where: { slug: "sidebar-menu" }) {
+    nodes {
+      id
+      menuId
+      isRestricted
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          title
+          label
+          description
+          url
+          isRestricted
+        }
+      }
+    }
+  }
+}
