@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/NotificationsOutlined";
 import InputIcon from "@material-ui/icons/Input";
+import { SITES_INFO } from "config";
 import useStyles from "./styles";
 
 export interface TopbarComponentProps {
@@ -40,7 +41,7 @@ const TopbarComponent: React.FunctionComponent<TopbarComponentProps> = ({
           noWrap
           className={classes.toolbarTitle}
         >
-          Terpusat Inc.
+          {SITES_INFO.title}.
         </Typography>
         {/* </RouterLink> */}
         <div className={classes.flexGrow} />

@@ -1,5 +1,7 @@
 import React from "react";
 import DashboardIcon from "@material-ui/icons/Dashboard";
+import ComputerIcon from "@material-ui/icons/Computer";
+import StyleIcon from "@material-ui/icons/Style";
 import PeopleIcon from "@material-ui/icons/People";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import TextFieldsIcon from "@material-ui/icons/TextFields";
@@ -7,46 +9,56 @@ import ImageIcon from "@material-ui/icons/Image";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import SettingsIcon from "@material-ui/icons/Settings";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
+import { IUseMenuHook } from "./useMenu";
 
-export default [
+const iconArray = [
   {
     title: "Dashboard",
-    href: "/dashboard",
     icon: <DashboardIcon />,
   },
   {
+    title: "Techno",
+    icon: <ComputerIcon />,
+  },
+  {
+    title: "Style",
+    icon: <StyleIcon />,
+  },
+  {
     title: "Users",
-    href: "/users",
     icon: <PeopleIcon />,
   },
   {
     title: "Products",
-    href: "/products",
     icon: <ShoppingBasketIcon />,
   },
   {
     title: "Authentication",
-    href: "/sign-in",
     icon: <LockOpenIcon />,
   },
   {
     title: "Typography",
-    href: "/typography",
     icon: <TextFieldsIcon />,
   },
   {
     title: "Icons",
-    href: "/icons",
     icon: <ImageIcon />,
   },
   {
     title: "Account",
-    href: "/account",
     icon: <AccountBoxIcon />,
   },
   {
     title: "Settings",
-    href: "/settings",
     icon: <SettingsIcon />,
   },
 ];
+
+export default (menus: IUseMenuHook[]): IUseMenuHook[] => {
+  return menus.map((menu) => {
+    const selectedIcon = iconArray.filter((icon) => icon.title === menu.label);
+    const thisIcon = selectedIcon.length ? selectedIcon[0].icon : undefined;
+
+    return { ...menu, icon: thisIcon };
+  });
+};

@@ -1,6 +1,8 @@
+import "assets/less/main.less";
 import { render } from "react-dom";
 import App from "./App";
 import history from "utils/history";
+import { GQL_MAIN_CONFIG } from "config";
 import * as serviceWorker from "./serviceWorker";
 import { createApolloClient, createApolloBrowser } from "utils/graphql";
 
@@ -8,13 +10,7 @@ const client = createApolloClient({
   options: {
     queryDeduplication: true,
   },
-  link: createApolloBrowser({
-    url: "https://outletcyber.net/terpusat/graphql",
-    retry: {
-      initialDelay: 3000,
-      maxAttempts: 5,
-    },
-  }),
+  link: createApolloBrowser(GQL_MAIN_CONFIG),
 });
 
 const bootstrap = () => {
@@ -30,4 +26,4 @@ bootstrap();
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();

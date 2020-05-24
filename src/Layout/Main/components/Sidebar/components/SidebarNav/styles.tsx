@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     paddingBottom: 0,
   },
   button: {
-    color: colors.blueGrey[800],
+    color: colors.blueGrey[700],
     padding: "10px 8px",
     justifyContent: "flex-start",
     textTransform: "none",
@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightMedium,
   },
   icon: {
-    color: theme.palette.common.black,
+    color: colors.blueGrey[700],
     width: 24,
     height: 24,
     display: "flex",

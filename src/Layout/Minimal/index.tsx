@@ -1,21 +1,23 @@
-import React, { Fragment } from "react";
-import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import React from "react";
 
-export interface LayoutComponentProps {
+import { Topbar } from "./components";
+import useStyles from "./styles";
+
+export interface MinimalLayoutComponentProps {
   children: React.ReactNode;
 }
 
-const LayoutComponent: React.FunctionComponent<LayoutComponentProps> = ({
+const MinimalLayoutComponent: React.FunctionComponent<MinimalLayoutComponentProps> = ({
   children,
 }) => {
-  // return <div dangerouslySetInnerHTML={{ __html: copyright }} />;
+  const classes = useStyles();
+
   return (
-    <Fragment>
-      <CssBaseline />
-      <Container maxWidth={false}>{children}</Container>
-    </Fragment>
+    <div className={classes.root}>
+      <Topbar />
+      <main className={classes.content}>{children}</main>
+    </div>
   );
 };
 
-export default LayoutComponent;
+export default MinimalLayoutComponent;

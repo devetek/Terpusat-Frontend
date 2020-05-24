@@ -33,7 +33,9 @@ const ProfileComponent: React.FunctionComponent<ProfileComponentProps> = (
       <Typography className={classes.name} variant="h4">
         {user.name}
       </Typography>
-      <Typography variant="body2">{user.bio}</Typography>
+      <Typography className={classes.bio} variant="body2">
+        {user.bio}
+      </Typography>
     </div>
   );
 };

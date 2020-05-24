@@ -12,6 +12,13 @@ export default makeStyles((theme) => ({
     height: 60,
   },
   name: {
+    fontWeight: 500,
+    color: "#263238",
+    fontSize: "20px",
     marginTop: theme.spacing(1),
+  },
+  bio: {
+    color: "#546e7a",
+    fontSize: "12px",
   },
 }));

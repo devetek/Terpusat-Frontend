@@ -13,5 +13,6 @@ export default makeStyles((theme) => ({
   },
   content: {
     height: "100%",
+    width: "98%",
   },
 }));

@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, Redirect } from "react-router-dom";
-import HomeComponent from "routes/HomePage";
 import { Main as MainLayout } from "Layout";
 import RouteWithLayout from "components/RouteWithLayout";
+import HomeComponent from "routes/HomePage";
+import TentangComponent from "routes/TentangPage";
 // import Header from "components/Header";
 // import Footer from "components/Footer";
 
@@ -31,6 +32,60 @@ const Routes: React.FC = () => {
         path="/"
         layout={MainLayout}
         component={HomeComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/channel"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/media"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/news"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/product"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/service"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/member"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/setting"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/about"
+        layout={MainLayout}
+        component={TentangComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/contact"
+        layout={MainLayout}
+        component={TentangComponent}
       />
     </Switch>
   );

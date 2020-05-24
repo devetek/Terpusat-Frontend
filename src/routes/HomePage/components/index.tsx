@@ -1,11 +1,8 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import FeaturedPost from "./FeaturedPost";
+import SEO from "utils/SEO";
+import Budget from "./Budget";
 import useStyles from "./styles";
-import mockup from "./../mockup/feature-post.json";
 
 export interface HomePageProps {
   featuredPosts?: IFeatureItem[];
@@ -26,38 +23,13 @@ const HomePage: React.FunctionComponent<HomePageProps> = ({
   const classes = useStyles();
 
   return (
-    <div>
-      <Helmet>
-        <title>Home Page</title>
-      </Helmet>
-      <main>
-        <Grid container spacing={4}>
-          {/* {featuredPosts &&
-            featuredPosts.length &&
-            featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))} */}
-          {mockup &&
-            mockup.length &&
-            mockup.map((post) => <FeaturedPost key={post.title} post={post} />)}
+    <div className={classes.root}>
+      {SEO()}
+      <Grid container spacing={4}>
+        <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <Budget />
         </Grid>
-        <Grid container spacing={5} className={classes.mainGrid}>
-          {/* <Main title="From the firehose" posts={posts} />
-            <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            /> */}
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Typography variant="h6" gutterBottom>
-              Construction on progress.... Stay with Terpusat, wait our gift
-              away ya!
-            </Typography>
-            <Divider />
-          </Grid>
-        </Grid>
-      </main>
+      </Grid>
     </div>
   );
 };

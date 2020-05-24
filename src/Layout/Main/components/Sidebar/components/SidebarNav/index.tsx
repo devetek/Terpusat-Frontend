@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef, forwardRef } from "react";
+import { NavLink, NavLinkProps } from "react-router-dom";
 import clsx from "clsx";
 import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
 import ListItem from "@material-ui/core/ListItem";
-import { onClickLink } from "utils/hyperlink";
-import useMenu from "./../../hooks/useMenu";
+import menus from "./Item";
 import useStyles from "./styles";
+// import { onClickLink } from "utils/hyperlink";
 
 /**
  *
@@ -26,26 +27,36 @@ const SidebarNavComponent: React.FunctionComponent<SidebarNavComponentProps> = (
   className,
   ...rest
 }) => {
+  const el = useRef(null);
   const classes = useStyles();
-  const [loading, menus] = useMenu();
+
+  const CustomRouterLink = forwardRef((props: NavLinkProps, _) => (
+    <div ref={el} style={{ flexGrow: 1 }}>
+      <NavLink {...props} />
+    </div>
+  ));
 
   return (
     <List {...rest} className={clsx(classes.root, className)}>
-      {!loading &&
-        menus.map((page) => (
-          <ListItem className={classes.item} disableGutters key={page.label}>
+      {menus.map((page) => {
+        return (
+          <ListItem
+            className={classes.item}
+            disableGutters
+            key={`${page.label}-${page.id}`}
+          >
             <Button
+              activeClassName={classes.active}
               className={classes.button}
-              onClick={(e) => {
-                e.preventDefault();
-                onClickLink(page.url);
-              }}
+              component={CustomRouterLink}
+              to={page.url}
             >
-              <div className={classes.icon}>{page.label}</div>
-              {page.title}
+              {page.icon && <div className={classes.icon}>{page.icon}</div>}
+              {page.label}
             </Button>
           </ListItem>
-        ))}
+        );
+      })}
     </List>
   );
 };

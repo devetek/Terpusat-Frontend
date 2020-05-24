@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { Typography, Link } from "@material-ui/core";
+import { HOSTNAME, SITES_INFO } from "config";
 import useStyles from "./styles";
 
 export interface FooterComponentProps {
@@ -15,15 +16,18 @@ const FooterComponent: React.FunctionComponent<FooterComponentProps> = ({
 
   return (
     <div {...rest} className={clsx(classes.root, className)}>
-      <Typography variant="body1">
+      <Typography variant="body1" className={clsx(classes.content, className)}>
         &copy;{" "}
-        <Link component="a" href="https://terpusat.com/">
-          Terpusat Inc
+        <Link component="a" href={HOSTNAME}>
+          {SITES_INFO.title}
         </Link>
-        . 2020
+        . {SITES_INFO.copyright()}
       </Typography>
-      <Typography variant="caption">
-        Pusat belanja, investasi, layanan, informasi nomor 1 di Indonedia.
+      <Typography
+        className={clsx(classes.caption, className)}
+        variant="caption"
+      >
+        {SITES_INFO.description}
       </Typography>
     </div>
   );
