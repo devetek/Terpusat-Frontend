@@ -61,9 +61,11 @@ const CardComponent: React.FunctionComponent<CardComponentProps> = (props) => {
             >
               {title}
             </Typography>
-            <Typography className={classes.contentText} variant="h3">
-              {value}
-            </Typography>
+            <Typography
+              className={classes.contentText}
+              variant="h6"
+              dangerouslySetInnerHTML={{ __html: value }}
+            />
           </Grid>
           {IconProps && (
             <Grid item>
