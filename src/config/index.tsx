@@ -8,7 +8,7 @@ export const GQL_MAIN_CONFIG = {
   },
 };
 export const SITES_INFO = {
-  title: "Terpusat Inc",
+  title: "Aplikasi Terpusat",
   description: "Pusat belanja, investasi, layanan, informasi di Indonedia.",
   copyright: () => {
     const startYear = new Date().getFullYear();

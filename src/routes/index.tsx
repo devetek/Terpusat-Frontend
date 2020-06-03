@@ -1,27 +1,11 @@
 import React from "react";
 import { Switch, Redirect } from "react-router-dom";
-import { Main as MainLayout } from "Layout";
+import { Main as MainLayout, FuseLayout3 as FuseLayout3Layout } from "Layout";
 import RouteWithLayout from "components/RouteWithLayout";
 import HomeComponent from "routes/HomePage";
+import DashboardComponent from "routes/DashboardPage";
 import TentangComponent from "routes/TentangPage";
-// import Header from "components/Header";
-// import Footer from "components/Footer";
-
-// const sections = [
-//   { title: "Store", url: "https://www.tokopedia.com/terpusat" },
-//   { title: "Style", url: "https://www.instagram.com/ulooks_id" },
-//   { title: "Techno", url: "https://devetek.com" },
-//   { title: "Invest", url: "https://www.facebook.com/TerpusatInvestment" },
-//   {
-//     title: "Media",
-//     url: "https://www.youtube.com/channel/UCi9ueSOWcbgLfb0sCW_BWbA",
-//   },
-//   {
-//     title: "Health",
-//     url: "https://www.facebook.com/InformasiKesehatanTerpusat",
-//   },
-//   { title: "Travel", url: "https://mypermatawisata.com/" },
-// ];
+import ExampleComponent from "routes/ExamplePage";
 
 const Routes: React.FC = () => {
   return (
@@ -30,14 +14,14 @@ const Routes: React.FC = () => {
       <RouteWithLayout
         exact
         path="/"
-        layout={MainLayout}
-        component={HomeComponent}
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
         path="/channel"
         layout={MainLayout}
-        component={TentangComponent}
+        component={HomeComponent}
       />
       <RouteWithLayout
         exact
@@ -48,8 +32,8 @@ const Routes: React.FC = () => {
       <RouteWithLayout
         exact
         path="/news"
-        layout={MainLayout}
-        component={TentangComponent}
+        layout={FuseLayout3Layout}
+        component={ExampleComponent}
       />
       <RouteWithLayout
         exact
