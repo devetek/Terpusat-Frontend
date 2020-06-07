@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const Purgecss = require("purgecss");
+const Purgecss = require("purgecss").default;
 const fs = require("fs");
 const path = require("path");
 
@@ -14,22 +14,24 @@ class TailwindExtractor {
   }
 }
 
-const purgecss = new Purgecss({
-  content: ["./src/**/*.js", "./src/**/*.tsx", "./src/**/*.ts"],
-  css: ["./src/assets/css/tailwind.css"],
-  whitelist: ["pl-24", "pl-40", "pl-56", "pl-72", "pl-80"],
-  extractors: [
-    {
-      extractor: TailwindExtractor,
-      extensions: ["html", "js"],
-    },
-  ],
-});
+try {
+  const result = new Purgecss().purge({
+    content: ["./src/**/*.js", "./src/**/*.tsx", "./src/**/*.ts"],
+    css: ["./src/assets/css/tailwind.css"],
+    whitelist: ["pl-24", "pl-40", "pl-56", "pl-72", "pl-80"],
+    extractors: [
+      {
+        extractor: new TailwindExtractor(),
+        extensions: ["html", "js"],
+      },
+    ],
+  });
 
-const result = purgecss.purge();
+  result.forEach((out) => {
+    fs.writeFileSync(path.resolve(__dirname, out.file), out.css, "utf-8");
+  });
 
-result.forEach((out) => {
-  fs.writeFileSync(path.resolve(__dirname, out.file), out.css, "utf-8");
-});
-
-console.log("src/styles/tailwind.css successfully purged.");
+  console.log("src/assets/css/tailwind.css successfully purged.");
+} catch (e) {
+  console.log(e);
+}

@@ -97,7 +97,7 @@ function getInitialSettings() {
   const defaultLayoutStyle =
     FuseSettingsConfig.layout && FuseSettingsConfig.layout.style
       ? FuseSettingsConfig.layout.style
-      : "layout1";
+      : "layout3";
   const layout = {
     style: defaultLayoutStyle,
     config: FuseLayoutConfigs[defaultLayoutStyle].defaults,

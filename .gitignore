@@ -27,3 +27,6 @@ package-lock.json
 .vercel
 # Local Netlify folder
 .netlify
+
+# CSS Result
+src/assets/css/tailwind.css

@@ -21,7 +21,7 @@ import useStyles from "./styles";
 
 const jss = create({
   ...jssPreset(),
-  plugins: [...jssPreset().plugins, jssExtend(), rtl()],
+  plugins: [...jssPreset().plugins, rtl()],
   insertionPoint: document.getElementById("jss-insertion-point") || undefined,
 });
 
@@ -37,7 +37,7 @@ const FuseLayout3Component: React.FunctionComponent<any> = (props) => {
     <StylesProvider jss={jss} generateClassName={generateClassName}>
       <FuseTheme>
         <div id="fuse-layout" className={clsx(classes.root, config.mode)}>
-          <LeftSideLayout3 />
+          {/* <LeftSideLayout3 /> */}
 
           <div className="flex flex-1 flex-col overflow-hidden relative">
             <ToolbarLayout3 />
