@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  terpusat_nginx:
+    image: nginx
+    container_name: terpusat_nginx
+    volumes:
+      - ./../build/:/devetek
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    restart: always
+    ports:
+      - 80:80
