@@ -13,13 +13,9 @@ Terpusat - Pusat belanja, investasi, layanan, informasi di Indonesia
 ### Layanan
 
 - Store
-
 - Style
-
 - Invest
-
 - Techno
-
 - Media
 
 ### Cara Menggunakan
@@ -28,7 +24,7 @@ Repository ini akan membantu developer Terpusat Group untuk melakukan update ke 
 
 #### Setup
 
-Sebelum menjalankan command untuk menjalankan aplikasi. Pertama kali pastikan semua dependency yang dibutuhkan untuk menjalankan aplikasi Terpusat Frontend terpenuhi. NodeJS `>=10.17.0 <12.2.0` dan yarn `>=1.22.4`. Setelah terpenuhi, jalankan command di bawah ini.
+Sebelum menjalankan command untuk menjalankan aplikasi. Pertama kali pastikan semua dependency yang dibutuhkan untuk menjalankan aplikasi Terpusat Frontend terpenuhi. NodeJS `>=10.17.0 <=10.21.0` dan yarn `>=1.22.4`. Setelah terpenuhi, jalankan command di bawah ini.
 
 ```sh
 yarn
@@ -52,11 +48,13 @@ yarn test
 
 #### Deployment
 
-Telah terintegrasi dengan [vercel](https://vercel.com/), aplikasi Terpusat Frontend dapat di publikasikan secara langsung dengan menjalankan command di bawah ini.
+Telah terintegrasi dengan [netlify](https://app.netlify.com/), aplikasi Terpusat Frontend dapat di publikasikan secara langsung dengan menjalankan command di bawah ini.
 
 ```sh
 yarn deploy
 ```
+
+Untuk kebutuhan variable di proses deployment dengan netlify, silahkan merujuk pada dokumein berikut [ini](https://docs.netlify.com/configure-builds/environment-variables/#netlify-configuration-variables).
 
 ## Contributors ✨
 

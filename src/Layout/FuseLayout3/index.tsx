@@ -6,7 +6,7 @@ import { create } from "jss";
 import rtl from "jss-rtl";
 import jssExtend from "jss-plugin-extend";
 import FooterLayout3 from "./components/FooterLayout3";
-import LeftSideLayout3 from "./components/LeftSideLayout3";
+// import LeftSideLayout3 from "./components/LeftSideLayout3";
 import NavbarWrapperLayout3 from "./components/NavbarWrapperLayout3";
 import RightSideLayout3 from "./components/RightSideLayout3";
 import ToolbarLayout3 from "./components/ToolbarLayout3";
@@ -21,7 +21,7 @@ import useStyles from "./styles";
 
 const jss = create({
   ...jssPreset(),
-  plugins: [...jssPreset().plugins, rtl()],
+  plugins: [...jssPreset().plugins, jssExtend(), rtl()],
   insertionPoint: document.getElementById("jss-insertion-point") || undefined,
 });
 

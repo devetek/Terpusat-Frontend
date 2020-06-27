@@ -61,9 +61,9 @@
     "velocity-react": "^1.4.3"
   },
   "scripts": {
-    "docker": "docker-compose -f .docker/dev.docker-compose.yaml down && docker-compose -f .docker/dev.docker-compose.yaml up",
+    "docker": "yarn build && docker-compose -f .docker/dev.docker-compose.yaml down --remove-orphans && docker-compose -f .docker/dev.docker-compose.yaml up",
     "start": "yarn run tailwind && craco start",
-    "build": "rm -rf build && yarn run tailwind && react-scripts build",
+    "build": "yarn run tailwind && craco build",
     "test": "craco test",
     "deploy": "yarn run netlify-deploy",
     "vercel-deploy": "vercel",
