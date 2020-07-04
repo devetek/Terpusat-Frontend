@@ -1,1 +1,1 @@
-export { default as DateWidget } from './Date';
+export { default as PopularWidget } from './Popular';

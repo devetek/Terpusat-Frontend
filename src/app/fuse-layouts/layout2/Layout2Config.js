@@ -76,7 +76,7 @@ const config = {
 		},
 		footer: {
 			type: 'group',
-			title: 'Footer',
+			title: 'Terpusat',
 			children: {
 				display: {
 					title: 'Display',

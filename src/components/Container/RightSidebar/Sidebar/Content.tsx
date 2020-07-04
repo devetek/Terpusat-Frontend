@@ -11,25 +11,15 @@ function SidebarContent(props: any) {
   const { classes } = props;
 
   return (
-    <div>
-      {props.header && (
-        <ThemeProvider theme={mainThemeDark}>
-          <div
-            className={clsx(
-              classes.sidebarHeader,
-              props.variant,
-              props.sidebarInner && classes.sidebarHeaderInnerSidebar
-            )}
-          >
-            {props.header}
-          </div>
-        </ThemeProvider>
-      )}
-
+    <>
       {props.content && (
-        <div className={classes.sidebarContent}>{props.content}</div>
+        <div className={classes.sidebarContent}>
+          <div className="w-full">
+            <div className="widget w-full p-12">{props.content}</div>
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
