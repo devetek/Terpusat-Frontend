@@ -15,10 +15,10 @@ const ExampleConfig = {
 		}
 	},
 	routes: [
-		{
-			path: '/example',
-			component: Example
-		}
+		// {
+		// 	path: '/example',
+		// 	component: Example
+		// }
 	]
 };
 

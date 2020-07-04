@@ -3,9 +3,9 @@ import * as Actions from '../actions';
 const initialState = {
 	role: [], // guest
 	data: {
-		displayName: 'John Doe',
-		photoURL: 'assets/images/avatars/Velazquez.jpg',
-		email: 'johndoe@withinpixels.com',
+		displayName: 'Pengunjung',
+		photoURL: 'assets/images/avatars/profile.jpg',
+		email: 'prakasa@devetek.com',
 		shortcuts: ['calendar', 'mail', 'contacts', 'todo']
 	}
 };

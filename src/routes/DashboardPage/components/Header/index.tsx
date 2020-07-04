@@ -49,8 +49,8 @@ const HeaderComponent = (props: any) => {
   return (
     <div className="flex flex-col justify-between flex-1 px-24 pt-24">
       <div className="flex justify-between items-start">
-        <Typography className="py-0 sm:py-24" variant="h4">
-          Selamat datang
+        <Typography className="py-0 sm:py-24" variant="h6">
+          Pusat belanja, investasi, layanan, informasi di Indonesia. 
         </Typography>
         <Hidden lgUp>
           <IconButton

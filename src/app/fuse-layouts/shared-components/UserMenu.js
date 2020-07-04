@@ -49,7 +49,8 @@ function UserMenu(props) {
       </Button>
 
       <Popover
-        open={Boolean(userMenu)}
+        // open={Boolean(userMenu)}
+        open={false}
         anchorEl={userMenu}
         onClose={userMenuClose}
         anchorOrigin={{
@@ -66,7 +67,7 @@ function UserMenu(props) {
       >
         {
           <>
-            <MenuItem
+            {/* <MenuItem
               component={Link}
               to="/pages/profile"
               onClick={userMenuClose}
@@ -76,8 +77,8 @@ function UserMenu(props) {
                 <Icon>account_circle</Icon>
               </ListItemIcon>
               <ListItemText primary="My Profile" />
-            </MenuItem>
-            <MenuItem
+            </MenuItem> */}
+            {/* <MenuItem
               component={Link}
               to="/apps/mail"
               onClick={userMenuClose}
@@ -87,8 +88,8 @@ function UserMenu(props) {
                 <Icon>mail</Icon>
               </ListItemIcon>
               <ListItemText primary="Inbox" />
-            </MenuItem>
-            <MenuItem
+            </MenuItem> */}
+            {/* <MenuItem
               onClick={() => {
                 dispatch(authActions.logoutUser());
                 userMenuClose();
@@ -98,7 +99,7 @@ function UserMenu(props) {
                 <Icon>exit_to_app</Icon>
               </ListItemIcon>
               <ListItemText primary="Logout" />
-            </MenuItem>
+            </MenuItem> */}
           </>
         }
       </Popover>

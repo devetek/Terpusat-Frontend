@@ -55,7 +55,7 @@ function FusePageSimpleSidebar(props: any, ref: any) {
           className={clsx(classes.sidebarWrapper, "permanent")}
           open={isOpen}
           classes={{
-            paper: clsx(classes.sidebar, props.variant, classes.rightSidebar),
+            paper: clsx(classes.sidebar, props.variant, classes.rightSidebar, "w-288"),
           }}
         >
           <Content {...props} classes={classes} />

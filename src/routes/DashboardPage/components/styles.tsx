@@ -17,4 +17,7 @@ export default makeStyles((theme) => ({
     borderRadius: "0 8px 0 0",
     marginLeft: 1,
   },
+  iconAlign: {
+    margin: "0px 5px -7px -5px",
+  },
 }));

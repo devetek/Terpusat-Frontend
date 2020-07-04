@@ -10,6 +10,7 @@ interface RightSidebarProps {
   toolbarContent?: JSX.Element;
   showBody?: boolean;
   bodyContent?: JSX.Element;
+  showSidebar?: boolean;
   sidebarContent?: JSX.Element;
 }
 
@@ -20,6 +21,7 @@ const RightSidebar: React.FunctionComponent<RightSidebarProps> = ({
   toolbarContent,
   showBody = false,
   bodyContent = null,
+  showSidebar = false,
   sidebarContent = null,
 }) => {
   const rightSidebarRef = useRef(null);
@@ -44,12 +46,15 @@ const RightSidebar: React.FunctionComponent<RightSidebarProps> = ({
               {showBody && <>{bodyContent}</>}
             </div>
           </div>
-          <Sidebar
-            rootRef={rootRef}
-            ref={rightSidebarRef}
-            variant="permanent"
-            content={sidebarContent}
-          />
+          {showSidebar && (
+            <Sidebar
+              rootRef={rootRef}
+              ref={rightSidebarRef}
+              variant="permanent"
+              classess={classes}
+              content={sidebarContent}
+            />
+          )}
         </div>
       </div>
     </div>
