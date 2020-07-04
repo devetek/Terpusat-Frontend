@@ -17,7 +17,7 @@ function FooterLayout3(props) {
         style={{ backgroundColor: footerTheme.palette.background.default }}
       >
         <Toolbar className="flex items-center container py-0 px-16 lg:px-24">
-          <Typography>Footer</Typography>
+  <Typography>&copy; Terpusat</Typography>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

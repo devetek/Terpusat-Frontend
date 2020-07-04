@@ -2,7 +2,8 @@ import React from "react";
 import { RightSidebar } from "components/Container";
 import Header from "./Header";
 import Toolbar from "./Toolbar";
-import { DateWidget } from "./Sidebar";
+import Content from "./Content";
+import { PopularWidget } from "./Sidebar";
 
 function DashboardPage(props: any) {
   return (
@@ -11,12 +12,12 @@ function DashboardPage(props: any) {
       headerContent={<Header />}
       showToolbar
       toolbarContent={<Toolbar />}
+      showBody
+      bodyContent={<Content />}
       showSidebar
       sidebarContent={
         <>
-          <div className="widget w-full p-12">
-            <DateWidget />
-          </div>
+            <PopularWidget />
         </>
       }
     />

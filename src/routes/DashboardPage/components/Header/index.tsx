@@ -17,13 +17,13 @@ const HeaderComponent = (props: any) => {
     menuEl: null,
   });
 
-  const projects = [
-    { id: 1, name: "Store" },
-    { id: 2, name: "Devetek" },
-    { id: 3, name: "ulook_id" },
-    { id: 4, name: "Investa" },
-    { id: 5, name: "Masakan Nusantara" },
-  ];
+  // const projects = [
+  //   { id: 1, name: "Store" },
+  //   { id: 2, name: "Devetek" },
+  //   { id: 3, name: "ulook_id" },
+  //   { id: 4, name: "Investa" },
+  //   { id: 5, name: "Masakan Nusantara" },
+  // ];
 
   const handleChangeProject = (id: any) => {
     setSelectedProject({
@@ -61,7 +61,7 @@ const HeaderComponent = (props: any) => {
           </IconButton>
         </Hidden>
       </div>
-      <div className="flex items-end">
+      {/* <div className="flex items-end">
         <div className="flex items-center">
           <div
             className={clsx(
@@ -98,7 +98,7 @@ const HeaderComponent = (props: any) => {
               ))}
           </Menu>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
