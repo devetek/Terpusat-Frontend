@@ -18,7 +18,7 @@ const Other = (props: any) => {
 					<p>E-mail: support@terpusat.com</p>
 					<br />
 					<p>Phone:</p>
-					<p>+62895-3180-3699</p>
+					<p>+62 895-3180-3699</p>
 					<p>+62 821-3818-4418</p>
 					<br />
 					<p>Website: <a href="https://terpusat.com/">https://terpusat.com/</a></p>

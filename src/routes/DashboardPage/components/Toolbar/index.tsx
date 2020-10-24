@@ -3,8 +3,6 @@ import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 
 const ToolbarComponent = (props: any) => {
-  // const [tabValue, setTabValue] = useState(0);
-
   const handleChangeTab = (_: any, value: any) => {
     props.setActiveContent(value);
   };
@@ -20,9 +18,9 @@ const ToolbarComponent = (props: any) => {
       className="w-full border-b-1 px-24"
       style={{ borderColor: "rgba(0, 0, 0, 0.12)" }}
     >
-      <Tab className="text-14 font-600 normal-case" label="Lini" />
-      <Tab className="text-14 font-600 normal-case" label="Suku" />
-      <Tab className="text-14 font-600 normal-case" label="Sejarah" />
+      <Tab className="text-14 font-600 normal-case" label="Layanan" />
+      <Tab className="text-14 font-600 normal-case" label="Divisi" />
+      <Tab className="text-14 font-600 normal-case" label="Tentang" />
     </Tabs>
   );
 };
