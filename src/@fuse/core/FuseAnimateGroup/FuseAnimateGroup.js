@@ -35,6 +35,7 @@ FuseAnimateGroup.propTypes = {
 };
 
 FuseAnimateGroup.defaultProps = {
+  className: 'noclass',
   enter: enterAnimationDefaults,
   leave: leaveAnimationDefaults,
   easing: [0.4, 0.0, 0.2, 1],

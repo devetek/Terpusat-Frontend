@@ -58,7 +58,7 @@ function QuickPanel(props) {
           <ListItem>
             <ListItemText
               primary="Jakarta"
-              secondary="Jl. Bakung No.23 RT 12/RW 02, Kelapa Dua Wetan, Ciracas, Jakarta Timur"
+              secondary="Jl. Bakung No.23 RT 02/RW 12, Kelapa Dua Wetan, Ciracas, Jakarta Timur"
             />
           </ListItem>
           <ListItem>
