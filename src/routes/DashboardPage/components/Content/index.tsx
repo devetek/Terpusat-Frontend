@@ -1,11 +1,14 @@
 import React from "react";
+import Grid from '@material-ui/core/Grid';
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import Store from "./Layanan/Store";
+import Pet from "./Layanan/Pet";
+import Makanan from "./Layanan/Makanan";
+import Fashion from "./Layanan/Fashion";
 import Tech from "./Layanan/Tech";
 import Invest from "./Layanan/Invest";
-import Travel from "./Layanan/Travel";
+import Liburan from "./Layanan/Liburan";
 import Other from "./Layanan/Other";
 import Member from "./Dvisi/Member";
 import useStyles from "./styles";
@@ -22,23 +25,53 @@ const ContentComponent = (props: ContentComponentProps) => {
   return (
     <>
       {activeContent === 0 && (
-        <div className="flex flex-wrap">
-          <div className="widget flex w-full sm:w-1/2 md:w-1/4 p-12">
-            <Store />
-          </div>
-          <div className="widget flex w-full sm:w-1/2 md:w-1/4 p-12">
-            <Invest />
-          </div>
-          <div className="widget flex w-full sm:w-1/2 md:w-1/4 p-12">
-            <Tech />
-          </div>
-          <div className="widget flex w-full sm:w-1/2 md:w-1/4 p-12">
-            <Travel />
-          </div>
-          <div className="widget flex w-full p-12">
-            <Other />
-          </div>
-        </div>
+        <Grid container>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Pet />
+            </div>
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Makanan />
+            </div>
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Tech />
+            </div>
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Fashion />
+            </div>
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Invest />
+            </div>
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <div className="widget flex w-full p-12">
+              <Liburan />
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div className="widget flex w-full p-12">
+              {/* <Other /> */}
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12}>
+                  <div className="widget flex w-full p-12">
+                    <Typography variant="h6">Terbaru</Typography>
+                  </div>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Other />
+                </Grid>
+              </Grid>
+            </div>
+          </Grid>
+        </Grid>
       )
       }
       {

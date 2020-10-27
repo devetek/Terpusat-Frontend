@@ -6,8 +6,8 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .logo-icon": {
-      width: 24,
-      height: 24,
+      width: 60,
+      height: 60,
       transition: theme.transitions.create(["width", "height"], {
         duration: theme.transitions.duration.shortest,
         easing: theme.transitions.easing.easeInOut,
@@ -33,7 +33,7 @@ function Logo() {
     <div className={clsx(classes.root, "flex items-center")}>
       <img
         className="logo-icon"
-        src="assets/images/logos/fuse.svg"
+        src="assets/images/logos/terpusat.png"
         alt="logo"
       />
       <Typography

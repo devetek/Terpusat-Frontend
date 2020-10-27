@@ -1,42 +1,49 @@
 import Paper from '@material-ui/core/Paper';
+import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import clsx from 'clsx';
 
 const Other = (props: any) => {
 	return (
 		<Paper className="w-full rounded-8 shadow-none border-1">
 			<div className="pt-12 pb-28">
-				<Typography className="text-20 leading-none text-blue mx-8">
-					Informasi selengkapnya kunjungi terpusat di:
+				<img src="https://ecs7.tokopedia.net/img/cache/700/VqbcmM/2020/5/19/fe7fe1be-ea79-4794-9035-47b080102e0d.jpg" className="w-full block" alt="note" />
+				<Typography className="p-8 pb-8 text-14 font-bold">
+					<a rel="noopener noreferrer" target="_blank" href="https://www.tokopedia.com/terpusat/vitamin-suplemen-herbal-semua-jenis-ikan-raja-lele">Vitamin Suplemen Herbal Semua Jenis Ikan Raja Lele</a>
 				</Typography>
 				<Typography className="text-14 mx-8" color="textSecondary">
-					<br />
-					<p>Lokasi:</p>
-					<p>Jakarta: Jl. Bakung No.23 RT 02/RW 12, Kelapa Dua Wetan, Ciracas, Jakarta Timur</p>
-					<p>Surakarta: Jalan Pracimantoro - Wonogiri RT.001 / RW.005, Mlangse Lor, Tubokarto</p>
-					<br />
-					<p>E-mail: support@terpusat.com</p>
-					<br />
-					<p>Phone:</p>
-					<p>+62 895-3180-3699</p>
-					<p>+62 821-3818-4418</p>
-					<br />
-					<p>Website: <a href="https://terpusat.com/">https://terpusat.com/</a></p>
-					<br />
-					<p>Lokasi: <a href="https://g.page/terpusat?share" rel="noopener noreferrer" target="_blank">https://g.page/terpusat?share</a></p>
-					<br />
-					<p>Facebook: <a href="https://www.facebook.com/Terpusat/" rel="noopener noreferrer" target="_blank">https://www.facebook.com/Terpusat/</a></p>
-					<br />
-					<p>Instagram: <a href="https://www.instagram.com/terpusat/" rel="noopener noreferrer" target="_blank">https://www.instagram.com/terpusat/</a></p>
-					<br />
-					<p>Twitter: <a href="https://twitter.com/terpusat" rel="noopener noreferrer" target="_blank">https://twitter.com/terpusat</a></p>
-					<br />
-					<p>Tokopedia: <a href="https://tokopedia.com/terpusat" rel="noopener noreferrer" target="_blank">https://tokopedia.com/terpusat</a></p>
-					<br />
-					<p>Shopee: <a href="https://shopee.co.id/terpusat" rel="noopener noreferrer" target="_blank">https://shopee.co.id/terpusat</a></p>
-					<br />
-					<p>Bukalapak: <a href="https://bukalapak.com/terpusat" rel="noopener noreferrer" target="_blank">https://bukalapak.com/terpusat</a></p>
+					RAJA LELE Adalah mikroba probiotik isolat asli indonesia dengan kandungan lactobacillus, acetobacter, dan yeast yang sangat efektif untuk budidaya lele...
 				</Typography>
+				<div className="py-8 px-6 flex flex-wrap w-full -mx-2">
+					<Chip
+						label="Vitamin Hewan"
+						classes={{
+							root: clsx('h-24'),
+							label: 'px-12 py-4 text-11',
+							deleteIcon: 'w-16',
+						}}
+						variant="outlined"
+					/>
+					<Chip
+						label="Obat Ikan"
+						classes={{
+							root: clsx('h-24'),
+							label: 'px-12 py-4 text-11',
+							deleteIcon: 'w-16',
+						}}
+						variant="outlined"
+					/>
+					<Chip
+						label="Probiotik Ikan"
+						classes={{
+							root: clsx('h-24'),
+							label: 'px-12 py-4 text-11',
+							deleteIcon: 'w-16',
+						}}
+						variant="outlined"
+					/>
+				</div>
 			</div>
 		</Paper>
 	);
