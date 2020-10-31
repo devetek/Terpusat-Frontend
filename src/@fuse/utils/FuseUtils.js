@@ -1,5 +1,9 @@
 // eslint-disable-next-line max-classes-per-file
-import _ from "@lodash";
+import omit from "lodash/omit";
+import merge from "lodash/merge";
+import isEqual from "lodash/isEqual";
+import isObject from "lodash/isObject";
+import transform from "lodash/transform";
 import * as colors from "@material-ui/core/colors";
 
 class EventEmitter {
@@ -141,7 +145,7 @@ class FuseUtils {
       let auth =
         config.auth || config.auth === null ? config.auth : defaultAuth || null;
       auth = route.auth || route.auth === null ? route.auth : auth;
-      const settings = _.merge({}, config.settings, route.settings);
+      const settings = merge({}, config.settings, route.settings);
 
       return {
         ...route,
@@ -234,10 +238,10 @@ class FuseUtils {
 
   static difference(object, base) {
     function changes(_object, _base) {
-      return _.transform(_object, (result, value, key) => {
-        if (!_.isEqual(value, _base[key])) {
+      return transform(_object, (result, value, key) => {
+        if (!isEqual(value, _base[key])) {
           result[key] =
-            _.isObject(value) && _.isObject(_base[key])
+            isObject(value) && isObject(_base[key])
               ? changes(value, _base[key])
               : value;
         }
@@ -252,16 +256,16 @@ class FuseUtils {
   static updateNavItem(nav, id, item) {
     return nav.map((_item) => {
       if (_item.id === id) {
-        return _.merge({}, _item, item);
+        return merge({}, _item, item);
       }
 
       if (_item.children) {
-        return _.merge({}, _item, {
+        return merge({}, _item, {
           children: this.updateNavItem(_item.children, id, item),
         });
       }
 
-      return _.merge({}, _item);
+      return merge({}, _item);
     });
   }
 
@@ -273,12 +277,12 @@ class FuseUtils {
         }
 
         if (_item.children) {
-          return _.merge({}, _.omit(_item, ["children"]), {
+          return merge({}, omit(_item, ["children"]), {
             children: this.removeNavItem(_item.children, id),
           });
         }
 
-        return _.merge({}, _item);
+        return merge({}, _item);
       })
       .filter((s) => s);
   }
@@ -297,12 +301,12 @@ class FuseUtils {
       }
 
       if (_item.children) {
-        return _.merge({}, _item, {
+        return merge({}, _item, {
           children: this.prependNavItem(_item.children, item, parentId),
         });
       }
 
-      return _.merge({}, _item);
+      return merge({}, _item);
     });
   }
 
@@ -320,12 +324,12 @@ class FuseUtils {
       }
 
       if (_item.children) {
-        return _.merge({}, _item, {
+        return merge({}, _item, {
           children: this.appendNavItem(_item.children, item, parentId),
         });
       }
 
-      return _.merge({}, _item);
+      return merge({}, _item);
     });
   }
 

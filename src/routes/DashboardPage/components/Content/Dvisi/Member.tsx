@@ -94,7 +94,7 @@ const Member = (props: any) => {
         ],
     },
     {
-        id: 1,
+        id: 3,
         cells: [
             {
                 id: "avatar",

@@ -1,5 +1,5 @@
 import FuseChipSelect from '@fuse/core/FuseChipSelect';
-import _ from '@lodash';
+import pick from 'lodash/pick';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,7 +8,7 @@ import { withFormsy } from 'formsy-react';
 import React from 'react';
 
 function FuseChipSelectFormsy(props) {
-	const importedProps = _.pick(props, [
+	const importedProps = pick(props, [
 		'children',
 		'classes',
 		'className',

@@ -7,7 +7,7 @@ import {
   mainThemeVariations,
   mustHaveThemeOptions,
 } from "@fuse/default-settings";
-import _ from "@lodash";
+import merge from "lodash/merge";
 import { createMuiTheme } from "@material-ui/core/styles";
 import FuseSettingsConfig from "app/fuse-configs/settingsConfig";
 import FuseThemesConfig from "app/fuse-configs/themesConfig";
@@ -21,8 +21,8 @@ const initialThemes = getInitialThemes();
 
 const initialState = {
   initial: initialSettings,
-  defaults: _.merge({}, initialSettings),
-  current: _.merge({}, initialSettings),
+  defaults: merge({}, initialSettings),
+  current: merge({}, initialSettings),
   themes: initialThemes,
   ...getThemeOptions(initialThemes, initialSettings),
 };
@@ -46,7 +46,7 @@ const settings = (state = initialState, action) => {
       };
     }
     case Actions.SET_INITIAL_SETTINGS: {
-      return _.merge({}, initialState);
+      return merge({}, initialState);
     }
     case Actions.SET_DEFAULT_SETTINGS: {
       const defaults = generateSettings(state.defaults, action.value);
@@ -63,8 +63,8 @@ const settings = (state = initialState, action) => {
           : themes;
       return {
         ...state,
-        defaults: _.merge({}, defaults),
-        current: _.merge({}, defaults),
+        defaults: merge({}, defaults),
+        current: merge({}, defaults),
         themes,
         ...getThemeOptions(themes, defaults),
       };
@@ -76,8 +76,8 @@ const settings = (state = initialState, action) => {
       };
       return {
         ...state,
-        defaults: _.merge({}, state.defaults),
-        current: _.merge({}, state.defaults),
+        defaults: merge({}, state.defaults),
+        current: merge({}, state.defaults),
         themes,
         ...getThemeOptions(themes, state.defaults),
       };
@@ -102,7 +102,7 @@ function getInitialSettings() {
     style: defaultLayoutStyle,
     config: FuseLayoutConfigs[defaultLayoutStyle].defaults,
   };
-  return _.merge(
+  return merge(
     {},
     defaultSettings,
     { layout },
@@ -120,7 +120,7 @@ function getInitialThemes() {
   const themes = Object.assign(
     {},
     ...Object.entries(themesObjRaw).map(([key, value]) => {
-      const muiTheme = _.merge(
+      const muiTheme = merge(
         {},
         defaultThemeOptions,
         value,
@@ -128,7 +128,7 @@ function getInitialThemes() {
       );
       return {
         [key]: createMuiTheme(
-          _.merge({}, muiTheme, {
+          merge({}, muiTheme, {
             mixins: extendThemeWithMixins(muiTheme),
             direction,
           })
@@ -174,7 +174,7 @@ function updateThemeDirections(themes, direction) {
 }
 
 export function generateSettings(_defaultSettings, _newSettings) {
-  return _.merge(
+  return merge(
     {},
     _defaultSettings,
     _newSettings && _newSettings.layout && _newSettings.layout.style

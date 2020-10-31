@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import clsx from 'clsx';
-import _ from '@lodash';
+import deburr from 'lodash/deburr';
 import React, { useEffect, useReducer, useRef } from 'react';
 import Autosuggest from 'react-autosuggest';
 import { useSelector } from 'react-redux';
@@ -102,7 +102,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 }
 
 function getSuggestions(value, data) {
-	const inputValue = _.deburr(value.trim()).toLowerCase();
+	const inputValue = deburr(value.trim()).toLowerCase();
 	const inputLength = inputValue.length;
 	let count = 0;
 

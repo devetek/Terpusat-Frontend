@@ -1,16 +1,17 @@
-import __ from "lodash";
+import { runInContext, setWith, clone, mixin } from 'lodash';
+
 
 /**
  * You can extend Lodash with mixins
  * And use it as below
  * import _ from '@lodash'
  */
-const _ = __.runInContext();
+const _ = runInContext();
 
-_.mixin({
+mixin({
   // Immutable Set for setting state
   setIn: (state, name, value) => {
-    return _.setWith(_.clone(state), name, value, _.clone);
+    return setWith(clone(state), name, value, clone);
   },
 });
 

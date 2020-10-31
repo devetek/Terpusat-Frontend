@@ -1,12 +1,12 @@
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 function FuseCountdown(props) {
 	const { onComplete } = props;
-	const [endDate] = useState(moment.isMoment(props.endDate) ? props.endDate : moment(props.endDate));
+	const [endDate] = useState(dayjs.isMoment(props.endDate) ? props.endDate : dayjs(props.endDate));
 	const [countdown, setCountdown] = useState({
 		days: 0,
 		hours: 0,
@@ -23,13 +23,13 @@ function FuseCountdown(props) {
 	}, [onComplete]);
 
 	const tick = useCallback(() => {
-		const currDate = moment();
+		const currDate = dayjs();
 		const diff = endDate.diff(currDate, 'seconds');
 		if (diff < 0) {
 			complete();
 			return;
 		}
-		const timeLeft = moment.duration(diff, 'seconds');
+		const timeLeft = dayjs.duration(diff, 'seconds');
 		setCountdown({
 			days: timeLeft.asDays().toFixed(0),
 			hours: timeLeft.hours(),
@@ -89,7 +89,7 @@ FuseCountdown.propTypes = {
 };
 
 FuseCountdown.defaultProps = {
-	endDate: moment().add(15, 'days')
+	endDate: dayjs().add(15, 'days')
 };
 
 export default React.memo(FuseCountdown);

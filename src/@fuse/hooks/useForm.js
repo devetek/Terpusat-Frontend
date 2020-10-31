@@ -1,4 +1,5 @@
-import _ from "@lodash";
+import setIn from "lodash/set";
+import isEqual from "lodash/isEqual";
 import { useCallback, useState } from "react";
 
 function useForm(initialState, onSubmit) {
@@ -7,7 +8,7 @@ function useForm(initialState, onSubmit) {
   const handleChange = useCallback((event) => {
     event.persist();
     setForm((_form) =>
-      _.setIn(
+      setIn(
         { ..._form },
         event.target.name,
         event.target.type === "checkbox"
@@ -18,13 +19,13 @@ function useForm(initialState, onSubmit) {
   }, []);
 
   const resetForm = useCallback(() => {
-    if (!_.isEqual(initialState, form)) {
+    if (!isEqual(initialState, form)) {
       setForm(initialState);
     }
   }, [form, initialState]);
 
   const setInForm = useCallback((name, value) => {
-    setForm((_form) => _.setIn(_form, name, value));
+    setForm((_form) => setIn(_form, name, value));
   }, []);
 
   const handleSubmit = useCallback(

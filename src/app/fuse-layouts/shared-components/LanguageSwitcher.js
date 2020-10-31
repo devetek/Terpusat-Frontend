@@ -1,62 +1,67 @@
 import Button from "@material-ui/core/Button";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuItem from "@material-ui/core/MenuItem";
-import Popover from "@material-ui/core/Popover";
-import { useTheme } from "@material-ui/core/styles";
+// import ListItemIcon from "@material-ui/core/ListItemIcon";
+// import ListItemText from "@material-ui/core/ListItemText";
+// import MenuItem from "@material-ui/core/MenuItem";
+// import Popover from "@material-ui/core/Popover";
+// import { useTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import * as Actions from "app/store/actions";
+// import * as Actions from "app/store/actions";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+// import { useTranslation } from "react-i18next";
+// import { useDispatch } from "react-redux";
 
-const languages = [
-  {
+// const languages = [
+//   {
+//     id: "id",
+//     title: "Indonesia",
+//     flag: "id",
+//   },
+//   {
+//     id: "en",
+//     title: "English",
+//     flag: "us",
+//   },
+// ];
+
+function LanguageSwitcher(props) {
+  // const dispatch = useDispatch();
+
+  // const theme = useTheme();
+  // const { i18n } = useTranslation();
+  const [menu, setMenu] = useState(null);
+
+  // const currentLng = languages.find((lng) => lng.id === i18n.language);
+  const currentLng = {
     id: "id",
     title: "Indonesia",
     flag: "id",
-  },
-  {
-    id: "en",
-    title: "English",
-    flag: "us",
-  },
-];
-
-function LanguageSwitcher(props) {
-  const dispatch = useDispatch();
-
-  const theme = useTheme();
-  const { i18n } = useTranslation();
-  const [menu, setMenu] = useState(null);
-
-  const currentLng = languages.find((lng) => lng.id === i18n.language);
+  };
 
   const userMenuClick = (event) => {
     setMenu(event.currentTarget);
   };
 
-  const userMenuClose = () => {
-    setMenu(null);
-  };
+  // const userMenuClose = () => {
+  //   setMenu(null);
+  // };
 
-  function handleLanguageChange(lng) {
-    const newLangDir = i18n.dir(lng.id);
+  // function handleLanguageChange(lng) {
+  //   const newLangDir = i18n.dir(lng.id);
 
-    /*
-        Change Language
-         */
-    i18n.changeLanguage(lng.id);
+  //   /*
+  //       Change Language
+  //        */
+  //   i18n.changeLanguage(lng.id);
 
-    /*
-        If necessary, change theme direction
-         */
-    if (newLangDir !== theme.direction) {
-      dispatch(Actions.setDefaultSettings({ direction: newLangDir }));
-    }
+  //   /*
+  //       If necessary, change theme direction
+  //        */
+  //   if (newLangDir !== theme.direction) {
+  //     dispatch(Actions.setDefaultSettings({ direction: newLangDir }));
+  //   }
 
-    userMenuClose();
-  }
+  //   userMenuClose();
+  // }
 
   return (
     <>
@@ -70,7 +75,7 @@ function LanguageSwitcher(props) {
         <Typography className="mx-4 font-600">{currentLng.id}</Typography>
       </Button>
 
-      <Popover
+      {/* <Popover
         open={Boolean(menu)}
         anchorEl={menu}
         onClose={userMenuClose}
@@ -98,7 +103,7 @@ function LanguageSwitcher(props) {
             <ListItemText primary={lng.title} />
           </MenuItem>
         ))}
-      </Popover>
+      </Popover> */}
     </>
   );
 }

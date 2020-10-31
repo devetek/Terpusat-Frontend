@@ -1,10 +1,10 @@
-import _ from '@lodash';
+import pick from 'lodash/pick';
 import TextField from '@material-ui/core/TextField';
 import { withFormsy } from 'formsy-react';
 import React from 'react';
 
 function TextFieldFormsy(props) {
-	const importedProps = _.pick(props, [
+	const importedProps = pick(props, [
 		'autoComplete',
 		'autoFocus',
 		'children',

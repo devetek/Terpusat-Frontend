@@ -1,4 +1,4 @@
-import _ from '@lodash';
+import times from 'lodash/times';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -6,7 +6,7 @@ import React from 'react';
 
 function DemoSidebarContent() {
 	function generate(element) {
-		return _(30).times(value =>
+		return times(value =>
 			React.cloneElement(element, {
 				key: value
 			})

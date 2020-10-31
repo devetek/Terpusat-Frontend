@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Redirect } from "react-router-dom";
-import { Main as MainLayout, FuseLayout3 as FuseLayout3Layout } from "Layout";
+import { FuseLayout3 as FuseLayout3Layout } from "Layout";
 import RouteWithLayout from "components/RouteWithLayout";
-import HomeComponent from "routes/HomePage";
+// import HomeComponent from "routes/HomePage";
 import DashboardComponent from "routes/DashboardPage";
-import TentangComponent from "routes/TentangPage";
-import ExampleComponent from "routes/ExamplePage";
+// import TentangComponent from "routes/TentangPage";
+// import ExampleComponent from "routes/ExamplePage";
 
 const Routes: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Routes: React.FC = () => {
         layout={FuseLayout3Layout}
         component={DashboardComponent}
       />
-      <RouteWithLayout
+      {/* <RouteWithLayout
         exact
         path="/channel"
         layout={MainLayout}
@@ -70,7 +70,7 @@ const Routes: React.FC = () => {
         path="/contact"
         layout={MainLayout}
         component={TentangComponent}
-      />
+      /> */}
     </Switch>
   );
 };

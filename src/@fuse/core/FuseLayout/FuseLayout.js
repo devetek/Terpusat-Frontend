@@ -1,6 +1,7 @@
 import { useDeepCompareEffect } from '@fuse/hooks';
 import FuseLayouts from '@fuse/layouts/FuseLayouts';
-import _ from '@lodash';
+import merge from 'lodash/merge';
+import isEqual from 'lodash/isEqual';
 import { makeStyles } from '@material-ui/core/styles';
 import AppContext from 'app/AppContext';
 import * as Actions from 'app/store/actions';
@@ -77,16 +78,16 @@ function FuseLayout(props) {
 			const routeSettings = matched.route.settings;
 
 			_newSettings = generateSettings(defaultSettings, routeSettings);
-		} else if (!_.isEqual(newSettings.current, defaultSettings)) {
+		} else if (!isEqual(newSettings.current, defaultSettings)) {
 			/**
 			 * Reset to default settings on the new path
 			 */
-			_newSettings = _.merge({}, defaultSettings);
+			_newSettings = merge({}, defaultSettings);
 		} else {
 			_newSettings = newSettings.current;
 		}
 
-		if (!_.isEqual(newSettings.current, _newSettings)) {
+		if (!isEqual(newSettings.current, _newSettings)) {
 			newSettings.current = _newSettings;
 		}
 
@@ -110,7 +111,7 @@ function FuseLayout(props) {
 	shouldAwaitRender();
 
 	useDeepCompareEffect(() => {
-		if (!_.isEqual(newSettings.current, settings)) {
+		if (!isEqual(newSettings.current, settings)) {
 			dispatch(Actions.setSettings(newSettings.current));
 		}
 	}, [dispatch, newSettings.current, settings]);
@@ -119,7 +120,7 @@ function FuseLayout(props) {
 
 	const Layout = useMemo(() => FuseLayouts[settings.layout.style], [settings.layout.style]);
 
-	return _.isEqual(newSettings.current, settings) ? <Layout classes={{ root: classes.root }} {...props} /> : null;
+	return isEqual(newSettings.current, settings) ? <Layout classes={{ root: classes.root }} {...props} /> : null;
 }
 
 export default React.memo(FuseLayout);

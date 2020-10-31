@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+import dayjs from "dayjs";
 import { useSelector } from "react-redux";
 
 function FooterLayout3(props) {
@@ -22,7 +23,7 @@ function FooterLayout3(props) {
             <Grid item xs={12} sm={3}>
               <Typography variant="subtitle2">Terpusat</Typography>
               <Typography variant="caption">
-                All Right Reserved &copy; 2020
+                All Right Reserved &copy; {dayjs().year()}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={3}>
@@ -126,8 +127,9 @@ function FooterLayout3(props) {
                   </a>
                 </Grid>
                 <Grid item xs={12} sm={12}>
-                <Typography variant="subtitle2">Jakarta: Jl. Bakung No.23 RT 02/RW 12, Kelapa Dua Wetan, Ciracas, Jakarta Timur</Typography>
-                <Typography variant="subtitle2">Surakarta: Jalan Pracimantoro - Wonogiri RT.001 / RW.005, Mlangse Lor, Tubokarto</Typography>
+                <Typography variant="caption">Jakarta: Jl. Bakung No.23 RT 02/RW 12, Kelapa Dua Wetan, Ciracas, Jakarta Timur</Typography>
+                <br />
+                <Typography variant="caption">Surakarta: Jalan Pracimantoro - Wonogiri RT.001 / RW.005, Mlangse Lor, Tubokarto</Typography>
                 </Grid>
               </Grid>
             </Grid>

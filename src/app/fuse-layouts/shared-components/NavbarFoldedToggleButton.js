@@ -1,4 +1,4 @@
-import _ from '@lodash';
+import set from 'lodash/set';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import * as Actions from 'app/store/actions';
@@ -15,7 +15,7 @@ function NavbarFoldedToggleButton(props) {
 			onClick={() => {
 				dispatch(
 					Actions.setDefaultSettings(
-						_.set({}, 'layout.config.navbar.folded', !settings.layout.config.navbar.folded)
+						set({}, 'layout.config.navbar.folded', !settings.layout.config.navbar.folded)
 					)
 				);
 			}}

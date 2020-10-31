@@ -1,4 +1,4 @@
-import _ from '@lodash';
+import pick from 'lodash/pick';
 import FilledInput from '@material-ui/core/FilledInput';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -10,7 +10,7 @@ import { withFormsy } from 'formsy-react';
 import React from 'react';
 
 function SelectFormsy(props) {
-	const importedProps = _.pick(props, [
+	const importedProps = pick(props, [
 		'autoWidth',
 		'children',
 		'classes',

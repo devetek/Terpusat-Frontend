@@ -1,4 +1,4 @@
-import _ from '@lodash';
+import pick from 'lodash/pick';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -7,7 +7,7 @@ import { withFormsy } from 'formsy-react';
 import React from 'react';
 
 function CheckboxFormsy(props) {
-	const importedProps = _.pick(props, [
+	const importedProps = pick(props, [
 		'checkedIcon',
 		'classes',
 		'color',

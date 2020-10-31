@@ -1,5 +1,5 @@
 import history from '@history';
-import _ from '@lodash';
+import merge from 'lodash/merge';
 import auth0Service from 'app/services/auth0Service';
 import firebaseService from 'app/services/firebaseService';
 import jwtService from 'app/services/jwtService';
@@ -64,7 +64,7 @@ export function createUserSettingsFirebase(authUser) {
 		/**
 		 * Merge with current Settings
 		 */
-		const user = _.merge({}, guestUser, {
+		const user = merge({}, guestUser, {
 			uid: authUser.uid,
 			from: 'firebase',
 			role: ['admin'],
@@ -115,7 +115,7 @@ export function setUserData(user) {
 export function updateUserSettings(settings) {
 	return (dispatch, getState) => {
 		const oldUser = getState().auth.user;
-		const user = _.merge({}, oldUser, { data: { settings } });
+		const user = merge({}, oldUser, { data: { settings } });
 
 		updateUserData(user, dispatch);
 

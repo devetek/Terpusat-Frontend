@@ -1,5 +1,8 @@
 import FuseLayoutConfigs from '@fuse/layouts/FuseLayoutConfigs';
-import _ from '@lodash';
+import set from 'lodash/set';
+import get from 'lodash/get';
+import merge from 'lodash/merge';
+import startCase from 'lodash/startCase';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -55,8 +58,8 @@ function FuseSettings(props) {
 	const classes = useStyles(props);
 
 	function handleChange(event) {
-		const newSettings = _.set(
-			_.merge({}, settings),
+		const newSettings = set(
+			merge({}, settings),
 			event.target.name,
 			event.target.type === 'checkbox' ? event.target.checked : event.target.value
 		);
@@ -90,7 +93,7 @@ function FuseSettings(props) {
 							border: `1px solid ${val.palette.divider}`
 						}}
 					>
-						{_.startCase(key)}
+						{startCase(key)}
 						<div
 							className="flex w-full h-8 block absolute bottom-0 left-0 right-0"
 							style={{
@@ -162,7 +165,7 @@ function FuseSettings(props) {
 								aria-label={formControl.title}
 								name={`layout.config.${target}`}
 								className={classes.group}
-								value={_.get(settings.layout.config, target)}
+								value={get(settings.layout.config, target)}
 								onChange={handleChange}
 								row={formControl.options.length < 4}
 							>
@@ -190,7 +193,7 @@ function FuseSettings(props) {
 								control={
 									<Switch
 										name={`layout.config.${target}`}
-										checked={_.get(settings.layout.config, target)}
+										checked={get(settings.layout.config, target)}
 										onChange={handleChange}
 										aria-label={formControl.title}
 									/>

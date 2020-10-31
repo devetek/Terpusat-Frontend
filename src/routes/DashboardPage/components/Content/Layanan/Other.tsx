@@ -20,7 +20,7 @@ const Other = (props: any) => {
 						label="Vitamin Hewan"
 						classes={{
 							root: clsx('h-24'),
-							label: 'px-12 py-4 text-11',
+							label: 'px-4 py-2 text-11',
 							deleteIcon: 'w-16',
 						}}
 						variant="outlined"
@@ -29,7 +29,7 @@ const Other = (props: any) => {
 						label="Obat Ikan"
 						classes={{
 							root: clsx('h-24'),
-							label: 'px-12 py-4 text-11',
+							label: 'px-4 py-2 text-11',
 							deleteIcon: 'w-16',
 						}}
 						variant="outlined"
@@ -38,7 +38,7 @@ const Other = (props: any) => {
 						label="Probiotik Ikan"
 						classes={{
 							root: clsx('h-24'),
-							label: 'px-12 py-4 text-11',
+							label: 'px-4 py-2 text-11',
 							deleteIcon: 'w-16',
 						}}
 						variant="outlined"

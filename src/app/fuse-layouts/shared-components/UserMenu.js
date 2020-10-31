@@ -1,18 +1,19 @@
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuItem from "@material-ui/core/MenuItem";
+// import ListItemIcon from "@material-ui/core/ListItemIcon";
+// import ListItemText from "@material-ui/core/ListItemText";
+// import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
-import * as authActions from "app/auth/store/actions";
+// import * as authActions from "app/auth/store/actions";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Link } from "react-router-dom";
 
 function UserMenu(props) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const user = useSelector((data) => data.auth.user);
 
   const [userMenu, setUserMenu] = useState(null);

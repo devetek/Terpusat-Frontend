@@ -1,21 +1,21 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Hidden from "@material-ui/core/Hidden";
 import Icon from "@material-ui/core/Icon";
 import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+// import Menu from "@material-ui/core/Menu";
+// import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
-import clsx from "clsx";
-import _ from "@lodash";
-import useStyles from "../styles";
+// import clsx from "clsx";
+// import find from "lodash/find";
+// import useStyles from "../styles";
 
 const HeaderComponent = (props: any) => {
-  const classes = useStyles(props);
-  const pageLayout = useRef(null);
-  const [selectedProject, setSelectedProject] = useState({
-    id: 1,
-    menuEl: null,
-  });
+  // const classes = useStyles(props);
+  // const pageLayout = useRef(null);
+  // const [selectedProject, setSelectedProject] = useState({
+  //   id: 1,
+  //   menuEl: null,
+  // });
 
   // const projects = [
   //   { id: 1, name: "Store" },
@@ -25,26 +25,26 @@ const HeaderComponent = (props: any) => {
   //   { id: 5, name: "Masakan Nusantara" },
   // ];
 
-  const handleChangeProject = (id: any) => {
-    setSelectedProject({
-      id,
-      menuEl: null,
-    });
-  };
+  // const handleChangeProject = (id: any) => {
+  //   setSelectedProject({
+  //     id,
+  //     menuEl: null,
+  //   });
+  // };
 
-  const handleOpenProjectMenu = (event: any) => {
-    setSelectedProject({
-      id: selectedProject.id,
-      menuEl: event.currentTarget,
-    });
-  };
+  // const handleOpenProjectMenu = (event: any) => {
+  //   setSelectedProject({
+  //     id: selectedProject.id,
+  //     menuEl: event.currentTarget,
+  //   });
+  // };
 
-  const handleCloseProjectMenu = () => {
-    setSelectedProject({
-      id: selectedProject.id,
-      menuEl: null,
-    });
-  };
+  // const handleCloseProjectMenu = () => {
+  //   setSelectedProject({
+  //     id: selectedProject.id,
+  //     menuEl: null,
+  //   });
+  // };
 
   return (
     <div className="flex flex-col justify-between flex-1 px-24 pt-24">
@@ -69,7 +69,7 @@ const HeaderComponent = (props: any) => {
               "flex items-center h-40 px-16 text-16"
             )}
           >
-            {_.find(projects, ["id", selectedProject.id]).name}
+            {find(projects, ["id", selectedProject.id]).name}
           </div>
           <IconButton
             className={clsx(classes.projectMenuButton, "h-40 w-40 p-0")}

@@ -9,7 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import withReducer from "app/store/withReducer";
 import React from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 import { useDispatch, useSelector } from "react-redux";
 import * as Actions from "./store/actions/index";
 import reducer from "./store/reducers";
@@ -38,17 +38,17 @@ function QuickPanel(props) {
 
         <div className="mb-0 py-16 px-24">
           <Typography className="mb-12 text-32" color="textSecondary">
-            {moment().format("dddd")}
+            {dayjs().format("dddd")}
           </Typography>
           <div className="flex">
             <Typography className="leading-none text-32" color="textSecondary">
-              {moment().format("DD")}
+              {dayjs().format("DD")}
             </Typography>
             <Typography className="leading-none text-16" color="textSecondary">
               th
             </Typography>
             <Typography className="leading-none text-32" color="textSecondary">
-              {moment().format("MMMM")}
+              {dayjs().format("MMMM")}
             </Typography>
           </div>
         </div>

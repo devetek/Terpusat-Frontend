@@ -1,5 +1,5 @@
 import { fuseDark } from "@fuse/colors";
-import _ from "@lodash";
+import merge from "lodash/merge";
 import { lightBlue, red } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 import qs from "qs";
@@ -131,7 +131,7 @@ export function extendThemeWithMixins(obj) {
 export function mainThemeVariations(theme) {
   return {
     mainThemeDark: createMuiTheme(
-      _.merge({}, defaultThemeOptions, theme, {
+      merge({}, defaultThemeOptions, theme, {
         palette: {
           type: "dark",
           background: {
@@ -143,7 +143,7 @@ export function mainThemeVariations(theme) {
       })
     ),
     mainThemeLight: createMuiTheme(
-      _.merge({}, defaultThemeOptions, theme, {
+      merge({}, defaultThemeOptions, theme, {
         palette: {
           type: "light",
           background: {
