@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
-const Pet = (props: any) => {
+const Hobi = (props: any) => {
 	return (
 		<Paper className="w-full rounded-8 shadow-none border-1">
 			<div className="text-center pt-12 pb-28">
@@ -11,11 +11,11 @@ const Pet = (props: any) => {
 				<Icon className="text-72">pets</Icon>
 				</Typography>
 				<Typography className="text-16" color="textSecondary">
-					Peliharaan
+					Hobi
 				</Typography>
 			</div>
 		</Paper>
 	);
 }
 
-export default React.memo(Pet);
+export default React.memo(Hobi);

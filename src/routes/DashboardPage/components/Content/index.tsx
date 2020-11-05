@@ -3,12 +3,13 @@ import Grid from '@material-ui/core/Grid';
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import Pet from "./Layanan/Pet";
-import Makanan from "./Layanan/Makanan";
-import Fashion from "./Layanan/Fashion";
-import Tech from "./Layanan/Tech";
-import Invest from "./Layanan/Invest";
-import Liburan from "./Layanan/Liburan";
+// import Pet from "./Layanan/Pet";
+// import Makanan from "./Layanan/Makanan";
+// import Fashion from "./Layanan/Fashion";
+// import Tech from "./Layanan/Tech";
+// import Invest from "./Layanan/Invest";
+// import Liburan from "./Layanan/Liburan";
+import Categories from "./Layanan/Categories";
 import Other from "./Layanan/Other";
 import Member from "./Dvisi/Member";
 import useStyles from "./styles";
@@ -26,7 +27,7 @@ const ContentComponent = (props: ContentComponentProps) => {
     <>
       {activeContent === 0 && (
         <Grid container>
-          <Grid item xs={4} sm={2}>
+          {/* <Grid item xs={4} sm={2}>
             <div className="widget flex w-full p-12">
               <Pet />
             </div>
@@ -55,17 +56,23 @@ const ContentComponent = (props: ContentComponentProps) => {
             <div className="widget flex w-full p-12">
               <Liburan />
             </div>
+          </Grid> */}
+          <Grid item xs={12}>
+            <div className="widget flex w-full p-12">
+              <Typography variant="h6">Brand Unggulan</Typography>
+            </div>
+            <div className="widget flex w-full p-12">
+              <Categories />
+            </div>
           </Grid>
           <Grid item xs={12}>
             <div className="widget flex w-full p-12">
               {/* <Other /> */}
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={12}>
-                  <div className="widget flex w-full p-12">
-                    <Typography variant="h6">Terbaru</Typography>
-                  </div>
+                  <Typography variant="h6">Terbaru</Typography>
                 </Grid>
-                <Grid item xs={6} sm={3}>
+                <Grid item xs={6} sm={2} lg={2}>
                   <Other />
                 </Grid>
               </Grid>
@@ -90,34 +97,34 @@ const ContentComponent = (props: ContentComponentProps) => {
               <Card className={clsx(classes.root, props.className)}>
                 <div className={clsx(classes.lineHeight, "flex items-center")}>
                   <Typography className="text-14 mx-8">
-                      Terpusat adalah pusat bisnis lokal yang berdiri sejak 2012.
-                      Dimulai dari divisi teknologi kami yang bergerak di bidang
-                      pelayanan teknologi yang dipromotori oleh Nedya Amrih Prakasa dan
-                      Muhammad Arifin. Devetek adalah lini bisnis terpusat di bidang
-                      teknologi. Dengan pengalaman lebih dari 5 tahun. Dan berhasil
-                      membantu memecahkan masalah dari berbagai lini bisnis dan
-                      pemerintahan dengan pendekatan teknologi.
+                    Terpusat adalah pusat bisnis lokal yang berdiri sejak 2012.
+                    Dimulai dari divisi teknologi kami yang bergerak di bidang
+                    pelayanan teknologi yang dipromotori oleh Nedya Amrih Prakasa dan
+                    Muhammad Arifin. Devetek adalah lini bisnis terpusat di bidang
+                    teknologi. Dengan pengalaman lebih dari 5 tahun. Dan berhasil
+                    membantu memecahkan masalah dari berbagai lini bisnis dan
+                    pemerintahan dengan pendekatan teknologi.
                       <br />
-                      <br />
+                    <br />
                       Selain membantu kehidupan dengan pendekatan teknologi, devetek
                       telah mampu memberikan layanan konsultasi teknologi untuk
                       kebutuhan sistem guna memberikan manfaat berlebih berupa efisiensi
                       dan efektifitas.
                       <br />
-                      <br />
+                    <br />
                       Bergerak di tahun 2016, dengan telah suksesnya layanan teknologi
                       kami. Terpusat mulai melebarkan sayap ke bisnis penyediaan barang.
                       Dengan pengetahuan yang mumpuni di bidang teknologi, kami dengan
                       cekatan mampu beradaptasi dengan hadirnya platform-platform
                       e-commerce dan memanfaatkannya sebagai lahan bisnis baru.
                       <br />
-                      <br />
+                    <br />
                       Dengan keterbatasan sumberdaya, dan melewati berbagai situasi,
                       terpusat mampu menjalankan mempertahankan bisnis baru ini dengan
                       tim Nedya Amrih Prakasa dan Tumiran. Barang yang kami sediakan
                       untuk saat ini fokus di bidang perikanan dan peternakan.
                       <br />
-                      <br />
+                    <br />
                       Di awal tahun 2020, terpusat kembali melebarkan sayapnya di lini
                       bisnis fashion, khususnya fashion muslim. Digawangi oleh Nedya
                       Amrih Prakasa dan Anggi Ranggita Asri. Saat ini terpusat telah
