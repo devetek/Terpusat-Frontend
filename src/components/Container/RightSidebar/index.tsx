@@ -35,7 +35,7 @@ const RightSidebar: React.FunctionComponent<RightSidebarProps> = ({
         <div className={classes.wrapper}>
           <div className={classes.contentWrapper}>
             {showHeader && (
-              <div className={clsx(classes.header, "min-h-160 h-160")}>
+              <div className={clsx(classes.header, "min-h-80 h-80")}>
                 {headerContent}
               </div>
             )}

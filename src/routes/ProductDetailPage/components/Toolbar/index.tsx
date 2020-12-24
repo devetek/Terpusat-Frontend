@@ -18,9 +18,9 @@ const ToolbarComponent = (props: any) => {
       className="w-full border-b-1 px-24"
       style={{ borderColor: "rgba(0, 0, 0, 0.12)" }}
     >
-      <Tab className="text-14 font-600 normal-case" label="Layanan" />
-      <Tab className="text-14 font-600 normal-case" label="Divisi" />
-      <Tab className="text-14 font-600 normal-case" label="Tentang" />
+      <Tab className="text-14 font-600 normal-case" label="Deskripsi" />
+      <Tab className="text-14 font-600 normal-case" label="Spesifikasi" />
+      <Tab className="text-14 font-600 normal-case" label="Review" />
     </Tabs>
   );
 };

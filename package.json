@@ -8,6 +8,9 @@
   "dependencies": {
     "@apollo/react-common": "^3.1.4",
     "@apollo/react-hooks": "^3.1.5",
+    "@emotion/css": "^11.1.3",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@loadable/component": "^5.12.0",
     "@popperjs/core": "^2.4.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -63,9 +66,9 @@
     "velocity-react": "^1.4.3"
   },
   "scripts": {
-    "docker": "yarn build && docker-compose -f .docker/dev.docker-compose.yaml down --remove-orphans && docker-compose -f .docker/dev.docker-compose.yaml up",
-    "start": "yarn run tailwind && craco start",
-    "build": "yarn run tailwind && craco build",
+    "docker": "docker-compose -f .docker/dev.docker-compose.yaml down --remove-orphans && docker-compose -f .docker/dev.docker-compose.yaml up",
+    "start": "craco start",
+    "build": "craco build",
     "test": "craco test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "deploy": "yarn run netlify-deploy",

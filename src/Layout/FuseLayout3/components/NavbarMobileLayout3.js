@@ -12,6 +12,10 @@ import clsx from "clsx";
 import React from "react";
 
 const useStyles = makeStyles({
+  root: {
+    background: "#f5f5f5",
+    color: "#000",
+  },
   content: {
     overflowX: "hidden",
     overflowY: "auto",
@@ -25,16 +29,20 @@ const useStyles = makeStyles({
 });
 
 function NavbarMobileLayout3(props) {
+  console.log("====== props ======", props);
   const classes = useStyles(props);
   const theme = useTheme();
 
   return (
-    <div className="flex flex-col h-full overflow-hidden">
+    <div className={clsx("flex flex-col h-full overflow-hidden")}>
       <AppBar
         color="primary"
         position="static"
         elevation={0}
-        className="flex flex-row items-center flex-shrink h-64 min-h-64 px-12"
+        className={clsx(
+          classes.root,
+          "flex flex-row items-center flex-shrink h-64 min-h-64 px-12"
+        )}
       >
         <div className="flex flex-1 mx-8">
           <Logo />

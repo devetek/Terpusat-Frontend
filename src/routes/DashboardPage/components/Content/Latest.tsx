@@ -2,6 +2,7 @@ import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const Other = (props: any) => {
+const Latest = (props: any) => {
 	const classes = useStyles(props);
 
 	return (
@@ -21,7 +22,7 @@ const Other = (props: any) => {
 			<div className="pt-12 pb-28">
 				<img height="100px" src="https://ecs7.tokopedia.net/img/cache/700/VqbcmM/2020/5/19/fe7fe1be-ea79-4794-9035-47b080102e0d.jpg" className="w-full block" alt="note" />
 				<Typography className="p-8 pb-8 text-14 font-bold">
-					<a rel="noopener noreferrer" target="_blank" href="https://www.tokopedia.com/terpusat/vitamin-suplemen-herbal-semua-jenis-ikan-raja-lele">Vitamin Suplemen Herbal Semua Jenis Ikan Raja Lele</a>
+					<Link rel="noopener noreferrer" to="/d/store/vitamin-ikan-1782">Vitamin Suplemen Herbal Semua Jenis Ikan Raja Lele</Link>
 				</Typography>
 				<div className="py-8 px-6 flex flex-wrap w-full -mx-2">
 					<Chip
@@ -57,4 +58,4 @@ const Other = (props: any) => {
 	);
 }
 
-export default React.memo(Other);
+export default React.memo(Latest);
