@@ -64,10 +64,6 @@ const useStyles = makeStyles(theme => ({
 			padding: '8px 12px 8px 12px',
 			height: 40,
 			minHeight: 40,
-			'&.level-0': {
-				height: 44,
-				minHeight: 44
-			},
 			'& .list-item-text': {
 				padding: '0 0 0 8px'
 			}

@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { BrowserView, MobileView } from "react-device-detect";
 import clsx from "clsx";
 import React from "react";
 
@@ -32,20 +31,11 @@ function Logo() {
 
   return (
     <div className={clsx(classes.root, "flex items-center")}>
-      <BrowserView>
-        <img
-          className="logo-icon"
-          src="assets/images/logos/terpusat.png"
-          alt="Terpusat"
-        />
-      </BrowserView>
-      <MobileView>
-        <img
-          className="logo-icon"
-          src="assets/images/logos/terpusat-invers.png"
-          alt="Terpusat"
-        />
-      </MobileView>
+      <img
+        className="logo-icon"
+        src="assets/images/logos/terpusat.png"
+        alt="Terpusat"
+      />
       <Typography
         className="text-16 mx-12 font-light logo-text"
         color="inherit"

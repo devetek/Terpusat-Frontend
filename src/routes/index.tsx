@@ -4,6 +4,7 @@ import { FuseLayout3 as FuseLayout3Layout } from "Layout";
 import RouteWithLayout from "components/RouteWithLayout";
 // import HomeComponent from "routes/HomePage";
 import DashboardComponent from "routes/DashboardPage";
+import ProductDetailComponent from "routes/ProductDetailPage";
 // import TentangComponent from "routes/TentangPage";
 // import ExampleComponent from "routes/ExamplePage";
 
@@ -17,60 +18,85 @@ const Routes: React.FC = () => {
         layout={FuseLayout3Layout}
         component={DashboardComponent}
       />
-      {/* <RouteWithLayout
-        exact
-        path="/channel"
-        layout={MainLayout}
-        component={HomeComponent}
-      />
       <RouteWithLayout
         exact
-        path="/media"
-        layout={MainLayout}
-        component={TentangComponent}
-      />
-      <RouteWithLayout
-        exact
-        path="/news"
+        path="/tentang"
         layout={FuseLayout3Layout}
-        component={ExampleComponent}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/product"
-        layout={MainLayout}
-        component={TentangComponent}
+        path="/visi"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/service"
-        layout={MainLayout}
-        component={TentangComponent}
+        path="/lokasi"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/member"
-        layout={MainLayout}
-        component={TentangComponent}
+        path="/divisi"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/setting"
-        layout={MainLayout}
-        component={TentangComponent}
+        path="/layanan/branding-produk"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/about"
-        layout={MainLayout}
-        component={TentangComponent}
+        path="/layanan/design"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
       />
       <RouteWithLayout
         exact
-        path="/contact"
-        layout={MainLayout}
-        component={TentangComponent}
-      /> */}
+        path="/layanan/system"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/layanan/marketing"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/kategori"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/mitra"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/karir"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/blog"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout
+        exact
+        path="/kontak"
+        layout={FuseLayout3Layout}
+        component={DashboardComponent}
+      />
+      <RouteWithLayout path="/d/:domain/:product" layout={FuseLayout3Layout} component={ProductDetailComponent} />
     </Switch>
   );
 };

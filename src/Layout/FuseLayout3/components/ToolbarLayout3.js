@@ -10,7 +10,7 @@ import UserMenu from "app/fuse-layouts/shared-components/UserMenu";
 import clsx from "clsx";
 import React from "react";
 import { useSelector } from "react-redux";
-import LanguageSwitcher from "app/fuse-layouts/shared-components/LanguageSwitcher";
+// import LanguageSwitcher from "app/fuse-layouts/shared-components/LanguageSwitcher";
 
 const Sparator = () => {
   return (
@@ -68,7 +68,7 @@ function ToolbarLayout3(props) {
 
             {Sparator()}
 
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
 
             {Sparator()}
 

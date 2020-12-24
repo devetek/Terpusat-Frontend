@@ -29,4 +29,16 @@ export default makeStyles(theme => ({
       marginBottom: '20px',
 		},
   },
+  button: {
+    margin: theme.spacing(1),
+  },
+  tokopedia: {
+    background: "rgb(3, 172, 14)",
+  },
+  shopee: {
+	  background: "#ee4d2d",
+  },
+  bukalapak: {
+	  background: "#e31f52",
+  }
 }));

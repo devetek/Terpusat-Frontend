@@ -13,6 +13,7 @@ const navigationConfig = [
     type: "item",
     icon: "apps",
     url: "/",
+    exact: true,
   },
   {
     id: "profil",
