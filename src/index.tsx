@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import App from "./App";
 import history from "utils/history";
 import { GQL_MAIN_CONFIG } from "config";
-import * as serviceWorker from "./serviceWorker";
+// import * as serviceWorker from "./serviceWorker";
 import { createApolloClient, createApolloBrowser } from "utils/graphql";
 
 // import "addons/react-chartjs-2-defaults";
@@ -30,4 +30,4 @@ bootstrap();
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+// serviceWorker.register();
